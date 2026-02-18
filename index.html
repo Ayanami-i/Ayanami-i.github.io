@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* ОСНОВНОЙ ФОН (текстура камня) */
+        /* ОСНОВНОЙ ФОН */
         body::before {
             content: "";
             position: fixed;
@@ -151,7 +151,7 @@
         .container {
             max-width: 1300px;
             margin: 0 auto;
-            padding: 20px 20px 30px; 
+            padding: 20px 20px 30px;
             position: relative;
             z-index: 5;
             display: flex;
@@ -162,7 +162,7 @@
         /* Шапка с названием */
         .header {
             text-align: center;
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
             position: relative;
             width: 100%;
         }
@@ -197,7 +197,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 40px;
-            margin: 10px 0 30px; 
+            margin: 10px 0 30px;
             width: 100%;
         }
 
@@ -221,6 +221,9 @@
             position: relative;
             overflow: hidden;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .block-button::before {
@@ -273,7 +276,7 @@
             background: #1e2a24;
             border: 6px solid #4f6b5c;
             border-radius: 16px;
-            max-width: 800px;
+            max-width: 900px;  
             width: 100%;
             max-height: 90vh;
             overflow-y: auto;
@@ -328,6 +331,8 @@
             border: none;
             background: none;
             font-family: 'Minecraftia', monospace;
+            line-height: 1;
+            z-index: 10;
         }
 
         .close-btn:hover {
@@ -341,15 +346,18 @@
             border-bottom: 3px solid #4f6b5c;
             padding-bottom: 10px;
             text-shadow: 2px 2px 0 #0f1f1a;
+            text-align: center; 
+            word-break: keep-all;
+            white-space: nowrap;
         }
 
-        /* Уменьшаем заголовки модалок на мобильных */
         @media (max-width: 600px) {
             .modal-title {
-                font-size: 1.5rem;  /* значительно меньше */
+                font-size: 1.5rem;
                 line-height: 1.2;
-                word-break: break-word;
-                padding-right: 30px; /* чтобы не налезало на крестик */
+                white-space: normal; 
+                padding-right: 30px;
+                padding-left: 30px;
             }
         }
 
@@ -504,7 +512,7 @@
             
             .blocks-grid {
                 gap: 20px;
-                margin: 5px 0 20px; 
+                margin: 5px 0 20px;
             }
             
             .main-channel-block {
@@ -534,6 +542,10 @@
                 font-size: 1.8rem;
                 top: -4px;
                 padding: 0 10px;
+            }
+
+            .modal-content {
+                padding: 25px 15px;
             }
         }
     </style>
@@ -573,11 +585,11 @@
         </div>
     </div>
 
-    <!-- МОДАЛКА СЦЕНАРИСТ -->
+    <!-- МОДАЛКА СЦЕНАРИСТЫ -->
     <div id="modal-screenwriter" class="modal">
         <div class="modal-content">
             <span class="close-btn" data-close>&times;</span>
-            <h2 class="modal-title">✎ Сценаристы</h2>  <!-- укоротили сам текст, но оставили как есть, на мобильных уменьшится размер -->
+            <h2 class="modal-title">✎ Сценаристы</h2>
             <div class="team-list">
                 <div class="team-item">
                     <h3>Главный сценарист</h3>
@@ -588,10 +600,11 @@
         </div>
     </div>
 
+    <!-- МОДАЛКА АКТЁРЫ -->
     <div id="modal-actors" class="modal">
         <div class="modal-content">
             <span class="close-btn" data-close>&times;</span>
-            <h2 class="modal-title">✦ Актёры дозора</h2> 
+            <h2 class="modal-title">✦ Актёры дозора</h2>
             <div class="actors-grid">
                 <div class="actor-card">
                     <div class="actor-name">Фунтик</div>
@@ -620,10 +633,9 @@
                 </div>
                 <div class="actor-card">
                     <div class="actor-name">Фенечка</div>
-                    <div class="actor-role">Диспетчер,  </div>
+                    <div class="actor-role">Диспетчер</div>
                     <a href="https://t.me/fenechkas" class="tg-link" target="_blank">@fenechkas</a>
                 </div>
-                <!-- Добавим ещё пару карточек для демонстрации скролла -->
                 <div class="actor-card">
                     <div class="actor-name">Люда</div>
                     <div class="actor-role">...</div>
@@ -637,7 +649,7 @@
                 <div class="actor-card">
                     <div class="actor-name">Фисташка</div>
                     <div class="actor-role">...</div>
-                    <a href="#" class="tg-link" target="_blank">..</a>
+                    <a href="#" class="tg-link" target="_blank">@pavel_nightwalker</a>
                 </div>
             </div>
             <div style="margin-top: 30px; color: #7b9e8b; font-size: 0.9rem; text-align: center; background: #1e3129; padding: 10px; border-radius: 8px;">
